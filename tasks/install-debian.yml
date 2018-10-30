@@ -1,4 +1,8 @@
 ---
+- name: Install python httplib2 via pip [Debian/Ubuntu]
+  pip: 
+    name: httplib2
+    
 - name: Install any necessary dependencies [Debian/Ubuntu]
   apt: 
     name: "{{ item }}" 
@@ -6,7 +10,6 @@
     update_cache: yes 
     cache_valid_time: 3600
   with_items:
-    - python-httplib2
     - python-apt
     - curl
     - apt-transport-https
